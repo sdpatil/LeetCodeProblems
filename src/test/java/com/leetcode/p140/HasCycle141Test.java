@@ -1,0 +1,54 @@
+package com.leetcode.p140;
+
+import org.junit.Test;
+
+/**
+ * Created by sunilpatil on 5/5/17.
+ */
+public class HasCycle141Test {
+    HasCycle141 hasCycle141 = new HasCycle141();
+
+    @Test
+    public void singleElementTest(){
+        ListNode head = new ListNode(1);
+
+        assert !hasCycle141.hasCycle(head);
+    }
+
+    @Test
+    public void twoElementNoCycleTest(){
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+
+        assert !hasCycle141.hasCycle(head);
+    }
+
+    @Test
+    public void twoElementCycleTest(){
+        ListNode head = new ListNode(1);
+        head.next = head;
+
+        assert hasCycle141.hasCycle(head);
+    }
+
+    @Test
+    public void testNumberOf1Bits(){
+        int i =11;
+        int count = 0;
+        while(i >0) {
+            int s = i&1;
+            if(s == 1)
+                count++;
+            i = i >>1;
+        }
+        System.out.println("Number of 1's " + count);
+    }
+
+    public void testGCD(){
+
+    }
+
+    public void gcd(int a, int b){
+
+    }
+}
