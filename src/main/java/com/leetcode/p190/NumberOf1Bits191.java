@@ -6,11 +6,12 @@ package com.leetcode.p190;
 public class NumberOf1Bits191 {
     public int hammingWeight(int n) {
         long c = n;
-        int count =0;
-        while(n!= 0){
-            if( (n & 1) == 1)
+        int count = 0;
+        while (n != 0) {
+            if ((n & 1) == 1)
                 count++;
-            n = n>>1;
+            //Use >>> instead of >> to handle unsigned
+            n = n >>> 1;
         }
 
         return count;

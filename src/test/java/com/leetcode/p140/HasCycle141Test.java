@@ -44,11 +44,36 @@ public class HasCycle141Test {
         System.out.println("Number of 1's " + count);
     }
 
-    public void testGCD(){
+    @Test
+    public void fiveElementCycleTest(){
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(3);
+        head.next.next.next = new ListNode(4);
+        head.next.next.next.next = new ListNode(5);
+        head.next.next.next.next.next =  head;
 
+        assert hasCycle141.hasCycle(head);
     }
 
-    public void gcd(int a, int b){
+    @Test
+    public void fourElementCycleTest(){
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(3);
+        head.next.next.next = new ListNode(4);
+        head.next.next.next.next =  head;
 
+        assert hasCycle141.hasCycle(head);
+    }
+
+    @Test
+    public void threeElementCycleTest(){
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(3);
+        head.next.next.next =  head;
+
+        assert hasCycle141.hasCycle(head.next);
     }
 }
