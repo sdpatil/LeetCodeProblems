@@ -1,5 +1,7 @@
 package com.leetcode.p140;
 
+import com.leetcode.ListNode;
+
 /**
  * Created by sunilpatil on 5/11/17.
  */

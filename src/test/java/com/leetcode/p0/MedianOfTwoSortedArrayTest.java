@@ -14,6 +14,7 @@ public class MedianOfTwoSortedArrayTest {
         medianOfTwoSortedArray = new MedianOfTwoSortedArray();
     }
 
+    /*
     @Test
     public void simpleTest(){
         int[] num1 = new int[]{1,3,5,7,9};
@@ -24,7 +25,7 @@ public class MedianOfTwoSortedArrayTest {
     }
 
     @Test
-    public void evenNumberTest(){
+    public void oddNumberTest(){
         int[] num1 = new int[]{1,3};
         int[] num2 = new int[]{2};
         double result = medianOfTwoSortedArray.findMedianSortedArrays(num1,num2);
@@ -33,11 +34,12 @@ public class MedianOfTwoSortedArrayTest {
     }
 
     @Test
-    public void oddNumberTest(){
+    public void evenNumberTest(){
         int[] num1 = new int[]{1,2};
         int[] num2 = new int[]{3,4};
         double result = medianOfTwoSortedArray.findMedianSortedArrays(num1,num2);
         System.out.println("Result " + result);
         assert result == 2.5;
     }
+    */
 }
