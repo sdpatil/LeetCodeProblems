@@ -6,17 +6,28 @@ import com.leetcode.TreeNode;
  * Created by sunilpatil on 5/24/17.
  */
 public class BalancedBinaryTree110 {
+
     public boolean isBalanced(TreeNode root) {
-        return isBalanced(root,Integer.MIN_VALUE,Integer.MAX_VALUE);
+        return getHeight2(root) != -1;
     }
 
-    public boolean isBalanced(TreeNode root,int min, int max){
-        if(root == null)
-            return true;
+    public int getHeight2(TreeNode root) {
+        //If node is null return true
+        if (root == null)
+            return 0;
 
-        if(root.val > max || root.val < min)
-            return false;
+        int leftHeight = getHeight2(root.left);
+        if (leftHeight == -1)
+            return -1;
+        int rightHeight = getHeight2(root.right);
+        if (rightHeight == -1)
+            return -1;
 
-        return isBalanced(root.left,min,root.val) && isBalanced(root.right,root.val,max);
+        if (Math.abs(leftHeight - rightHeight) > 1)
+            return -1;
+
+        return Math.max(leftHeight, rightHeight) + 1;
     }
+
+
 }

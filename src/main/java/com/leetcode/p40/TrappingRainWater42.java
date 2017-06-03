@@ -4,6 +4,7 @@ package com.leetcode.p40;
  * Created by sunilpatil on 5/30/17.
  */
 public class TrappingRainWater42 {
+
     public int trap(int[] height) {
         int a = 0;
         int b = height.length -1;

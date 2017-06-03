@@ -19,11 +19,20 @@ public class BalancedBinaryTreeTest {
     public void simpleTest(){
         TreeNode root = new TreeNode(10);
         root.left = new TreeNode(8);
-        root.right = new TreeNode(12);
+    //    root.right = new TreeNode(12);
 
         assert problem.isBalanced(root);
 
         root.left.left = new TreeNode(9);
+        root.left.left.left = new TreeNode(19);
         assert !problem.isBalanced(root);
+    }
+
+    @Test
+    public void simple200Test(){
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+
+        assert problem.isBalanced(root);
     }
 }
