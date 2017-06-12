@@ -7,6 +7,21 @@ import com.leetcode.TreeNode;
  */
 public class SumOfLeftLeaves404 {
     public int sumOfLeftLeaves(TreeNode root) {
-        return 0;
+        if(root == null || isLeaf(root))
+            return 0;
+
+
+        if(isLeaf(root.left) )
+            return root.left.val + sumOfLeftLeaves(root.right);
+        else
+            return sumOfLeftLeaves(root.left) + sumOfLeftLeaves(root.right);
+    }
+
+    private boolean isLeaf(TreeNode node){
+        if(node == null)
+            return false;
+        if(node.left == null && node.right == null)
+            return true;
+        return false;
     }
 }
