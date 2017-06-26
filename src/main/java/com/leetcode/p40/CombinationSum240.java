@@ -3,32 +3,44 @@ package com.leetcode.p40;
 import java.util.*;
 
 /**
- * Created by sunilpatil on 3/31/17.
+ * Problem:  Given a collection of candidate numbers (C) and a target number (T),
+ * find all unique combinations in C where the candidate numbers sums to T.
+ Each number in C may only be used once in the combination.
+ Note:
+ All numbers (including target) will be positive integers.
+ The solution set must not contain duplicate combinations.
+ For example, given candidate set [10, 1, 2, 7, 6, 1, 5] and target 8,
+ A solution set is:
+ [
+ [1, 7],
+ [1, 2, 5],
+ [2, 6],
+ [1, 1, 6]
+ ]
  */
 public class CombinationSum240 {
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
-        List<List<Integer>> combinationList = new ArrayList<List<Integer>>();
-        Arrays.sort(candidates);
-        combinationSum(candidates, target, 0, 0, new ArrayList<Integer>(), combinationList);
-        return combinationList;
+       List<List<Integer>> result = new ArrayList<>();
+       Arrays.sort(candidates);
+       backtrack(candidates,result,new ArrayList<>(), target,0);
+       return result;
     }
 
-    public void combinationSum(int[] candidates, int target, int index, int partialSum, List<Integer> partialSumList, List<List<Integer>> combinationList) {
-        if (target == partialSum) {
-            ArrayList<Integer> addList = new ArrayList<Integer>(partialSumList);
-            combinationList.add(new ArrayList<Integer>(partialSumList));
+   public void backtrack(int[] candidates, List<List<Integer>> result, List<Integer> partialList,
+                         int remain, int start){
+        if(remain <0)
             return;
-        }
-        for (int i = index; i < candidates.length; i++) {
-            if (i > index && candidates[i] == candidates[i - 1])
-                continue;
-            partialSum = partialSum + candidates[i];
-            partialSumList.add(candidates[i]);
-            if (partialSum <= target) {
-                combinationSum(candidates, target, i + 1, partialSum, partialSumList, combinationList);
+        else if(remain == 0)
+            result.add(new ArrayList<>(partialList));
+        else{
+            for(int i = start ; i < candidates.length ;i++){
+                //This is the only difference
+                if(i > start && candidates[i] == candidates[i-1])
+                    continue;;
+                partialList.add(candidates[i]);
+                backtrack(candidates,result, partialList, remain-candidates[i], i+1);
+                partialList.remove(partialList.size()-1);
             }
-            partialSum = partialSum - candidates[i];
-            partialSumList.remove(partialSumList.size() - 1);
         }
-    }
+   }
 }

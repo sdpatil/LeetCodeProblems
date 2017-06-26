@@ -21,4 +21,29 @@ public class AlienDictionary269Test {
         assert result.equals("wertf");
 
     }
+
+    @Test
+    public void simple2Test(){
+        String[] words ={
+                "z",
+                "x"};
+
+        String result =problem.alienOrder(words);
+        System.out.println("Result " + result);
+        assert result.equals("zx");
+
+    }
+
+    @Test
+    public void simple3Test(){
+        String[] words ={
+                "z",
+                "x",
+                "z"};
+
+        String result =problem.alienOrder(words);
+        System.out.println("Result " + result);
+        assert result.equals("  ");
+
+    }
 }

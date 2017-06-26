@@ -73,7 +73,22 @@ public class WordBreak139Test {
         dict.add("ice");
         dict.add("cream");
 
-        assert  problem.wordBreak("ilikesamnsung",dict);
+        assert  problem.wordBreak("ilikesamsung",dict);
+    }
+
+    @Test
+    public void simple4Test(){
+        String s ="iamace";
+        List<String> dict = new ArrayList<String>();
+        dict.add("i");
+        dict.add("a");
+
+        dict.add("am");
+        dict.add("ace");
+
+        boolean result = problem.wordBreak(s,dict);
+        System.out.println("Result " + result);
+        assert result;
     }
 
 }

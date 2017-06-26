@@ -18,4 +18,12 @@ public class IntegerToRomanTest {
     public void simpleTest(){
         System.out.println(problem.intToRoman(11));
     }
+
+    @Test
+    public void simple2Test(){
+        System.out.println(problem.intToRoman(4));
+        System.out.println(problem.intToRoman(6));
+        System.out.println(problem.intToRoman(9));
+
+    }
 }

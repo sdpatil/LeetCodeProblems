@@ -26,4 +26,14 @@ public class CombinationSum30Test {
 
         assert combinationList.size()==2;
     }
+
+    @Test
+    public void simple2Test(){
+        int[] num = new int[]{1,2,3};
+        List<List<Integer>> combinationList = combinationSum30.combinationSum(num,4);
+        for(List<Integer>  combination: combinationList)
+            System.out.println(combination);
+
+        assert combinationList.size()==7;
+    }
 }

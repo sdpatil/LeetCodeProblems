@@ -13,6 +13,16 @@ public class MajorityElement169 {
         return nums[nums.length/2];
     }
 
+    /**
+     * Problem -> One element appears more than n/2 times, find that element
+     * Ex. {2,1,2}
+     *
+     * Basic idea assume first element is the majority so set it equal to majority
+     * and count equal to 0, if next element is equal to current selection of majority
+     * increament count by one if not decreament count by 1
+     * If count goes down to zero, set the current element equal to majority and go
+     * through same cycle
+     */
     public int majorityElement(int[] nums) {
         int count = 0;
         int ret = 0;
