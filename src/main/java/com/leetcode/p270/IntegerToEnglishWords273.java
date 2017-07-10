@@ -7,29 +7,24 @@ import java.util.HashMap;
  */
 public class IntegerToEnglishWords273 {
     HashMap<Integer, String> map = new HashMap<Integer, String>();
-
     public String numberToWords(int num) {
         fillMap();
         StringBuilder sb = new StringBuilder();
         if(num == 0)
             return map.get(0);
-
         if(num >= 1000000000){
             int numberOfBillion = num /1000000000;
-            sb.append(convert(numberOfBillion));
-            sb.append(" Billion");
+            sb.append(convert(numberOfBillion)).append(" Billion");
             num = num %1000000000;
         }
         if(num >= 1000000){
             int numberOfMillion = num /1000000;
-            sb.append(convert(numberOfMillion));
-            sb.append(" Million");
+            sb.append(convert(numberOfMillion)).append(" Million");
             num = num %1000000;
         }
         if(num >= 1000){
             int numberOfThousand = num /1000;
-            sb.append(convert(numberOfThousand));
-            sb.append(" Thousand");
+            sb.append(convert(numberOfThousand)).append(" Thousand");
             num = num %1000;
         }
         if(num >0)
@@ -44,7 +39,6 @@ public class IntegerToEnglishWords273 {
             sb.append(" " +map.get(numHundred) +" Hundred");
             num = num %100;
         }
-
         if(num >0){
             if(num > 0 && num < 20){
                 sb.append(" " +map.get(num));

@@ -43,7 +43,7 @@ public class AlienDictionary269Test {
 
         String result =problem.alienOrder(words);
         System.out.println("Result " + result);
-        assert result.equals("  ");
+        assert result.equals("");
 
     }
 }

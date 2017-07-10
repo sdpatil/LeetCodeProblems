@@ -29,14 +29,11 @@ public class WordSearch79 {
             return true;
         if (x < 0 || y < 0 || x >= board.length || y >= board[0].length)
             return false;
-
         if (visited[x][y])
             return false;
-
         char currentChar = word.charAt(charIndex);
         if (board[x][y] != currentChar)
             return false;
-
         visited[x][y] = true;
         boolean result = exist(x - 1, y, board, visited, word, charIndex + 1) ||
                 exist(x + 1, y, board, visited, word, charIndex + 1) ||

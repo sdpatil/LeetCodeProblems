@@ -33,4 +33,14 @@ public class SortedListToBST109Test {
         TreeNode tree = problem.sortedListToBST(node);
         BTreePrinter.printNode(tree);
     }
+    @Test
+    public void simple2Test() {
+        ListNode node = new ListNode(2);
+        node.next = new ListNode(3);
+        node.next.next = new ListNode(5);
+        node.next.next.next = new ListNode(7);
+        node.next.next.next.next = new ListNode(11);
+        TreeNode tree = problem.sortedListToBST(node);
+        BTreePrinter.printNode(tree);
+    }
 }
